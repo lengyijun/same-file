@@ -68,6 +68,10 @@ See [`examples/is_stderr.rs`] for a runnable example and compare the output of:
 #![allow(bare_trait_objects, unknown_lints)]
 #![deny(missing_docs)]
 
+#![no_std]
+use std::prelude::v1::*;
+extern crate sgx_tstd as std;
+
 #[cfg(doctest)]
 doc_comment::doctest!("../README.md");
 

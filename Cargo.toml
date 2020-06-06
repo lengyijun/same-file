@@ -14,8 +14,8 @@ license = "Unlicense/MIT"
 exclude = ["/.github"]
 edition = "2018"
 
-[target.'cfg(windows)'.dependencies.winapi-util]
-version = "0.1.1"
-
 [dev-dependencies]
 doc-comment = "0.3"
+
+[target.'cfg(not(target_env = "sgx"))'.dependencies]
+sgx_tstd = { version = "1.0", rev = "v1.1.2", git = "https://github.com/apache/teaclave-sgx-sdk.git", features=["untrusted_fs","thread", "backtrace"] }
